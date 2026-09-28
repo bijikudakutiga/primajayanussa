@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jaya Prima Nussa — Membangun Rasa Nusantara</title>
+<meta name="description" content="Pemasok penyedap rasa dan bumbu makanan: Vijimoto, Galaxy, M59, M56, M5000. Untuk rumah tangga, Horeka, UMKM kuliner, grosir dan distributor.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#D9251C;--orange:#FF7A1A;--cream:#FFF4E6;--ink:#2B0D09;--wine:#5A130D;--f1:'Fraunces',Georgia,serif;--f2:'Manrope',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font:400 1.05rem/1.7 var(--f2);background:var(--cream);color:var(--ink);overflow-x:hidden}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--f1);font-weight:300;line-height:1.02;letter-spacing:-.02em}
+h2{font-size:clamp(2.4rem,6vw,5.4rem)}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.wrap{padding:clamp(5rem,12vw,10rem) clamp(1.2rem,6vw,6rem)}
+/* loader */
+#load{position:fixed;inset:0;z-index:99;background:var(--red);display:grid;place-items:center;color:var(--cream)}
+#load b{font:300 italic clamp(3rem,10vw,8rem)/1 var(--f1)}
+/* nav */
+header{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:1.1rem clamp(1.2rem,4vw,3rem);color:#fff;mix-blend-mode:normal}
+header img{height:46px;background:#fff;border-radius:10px;padding:5px}
+#mb{background:none;border:1.5px solid #fff;color:#fff;border-radius:99px;padding:.6rem 1.3rem;font:700 .85rem var(--f2);cursor:pointer;backdrop-filter:blur(8px);background:rgba(0,0,0,.18)}
+#menu{position:fixed;inset:0;z-index:60;background:var(--wine);color:var(--cream);display:flex;flex-direction:column;justify-content:center;padding:0 clamp(1.5rem,8vw,8rem);clip-path:circle(0 at calc(100% - 3rem) 2.5rem);visibility:hidden}
+#menu a{font:300 clamp(2.4rem,7vw,5.5rem)/1.15 var(--f1);display:block;width:max-content;transition:.3s}
+#menu a:hover{color:var(--orange);transform:translateX(1.2rem);font-style:italic}
+#mx{position:absolute;top:1.3rem;right:clamp(1.2rem,4vw,3rem);background:none;border:1.5px solid var(--cream);color:var(--cream);border-radius:99px;padding:.6rem 1.3rem;font:700 .85rem var(--f2);cursor:pointer}
+/* hero */
+#hero{position:relative;height:100svh;min-height:560px;overflow:hidden;background:var(--wine);color:#fff}
+.sl{position:absolute;inset:0;opacity:0}.sl img{width:100%;height:100%;object-fit:cover;transform:scale(1.15)}
+.sl:first-child{opacity:1}
+#hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,13,9,.45),rgba(43,13,9,.1) 40%,rgba(43,13,9,.85))}
+.hc{position:absolute;z-index:2;left:clamp(1.2rem,6vw,6rem);right:1.2rem;bottom:clamp(2rem,9vh,6rem)}
+.hc h1{font-size:clamp(3.4rem,13vw,12rem);font-style:italic}
+.hc h1 span{display:inline-block;transform:translateY(110%)}.hc .ln{overflow:hidden;display:block}
+.hc p{max-width:34ch;margin-top:1.4rem;font-size:1.15rem;opacity:0}
+.dots{position:absolute;z-index:2;right:clamp(1.2rem,4vw,3rem);bottom:clamp(2rem,9vh,6rem);display:flex;gap:.5rem}
+.dots i{width:34px;height:3px;background:rgba(255,255,255,.4)}.dots i.on{background:var(--orange)}
+/* tentang */
+#tentang{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem);align-items:center}
+#tentang .im{overflow:hidden;border-radius:280px 280px 24px 24px;aspect-ratio:3/4}
+#tentang .im img{width:100%;height:120%;object-fit:cover}
+#tentang p{margin-top:1.5rem;max-width:56ch}
+.stats{display:flex;gap:2.5rem;margin-top:2.2rem;flex-wrap:wrap}.stats b{font:300 3rem var(--f1);color:var(--red);display:block;line-height:1}.stats span{font-size:.9rem}
+/* produk */
+#produk{background:var(--red);color:var(--cream);overflow:hidden}
+#produk .top{padding:clamp(4rem,9vw,7rem) clamp(1.2rem,6vw,6rem) 2rem}
+.trk{display:flex;gap:2rem;padding:0 clamp(1.2rem,6vw,6rem) 4rem;width:max-content}
+.pc{width:min(78vw,430px);flex:none;background:var(--cream);color:var(--ink);border-radius:26px;overflow:hidden}
+.pc .ph{height:min(52vh,420px);background:radial-gradient(circle at 50% 60%,#fff,#FFE3C4);display:grid;place-items:center}
+.pc img{max-height:88%;transition:transform .6s cubic-bezier(.2,.8,.2,1)}.pc:hover img{transform:scale(1.08) rotate(-3deg)}
+.pc div.tx{padding:1.4rem 1.6rem 1.8rem}.pc h3{font-size:2rem}.pc p{font-size:.95rem;margin-top:.4rem}
+/* untuk siapa */
+#siapa{background:var(--ink);color:var(--cream);padding:0}
+.sp{display:flex;height:100svh;min-height:520px}
+.pn{position:relative;flex:1;overflow:hidden;transition:flex .8s cubic-bezier(.7,0,.2,1);cursor:pointer}
+.pn:hover,.pn.on{flex:2.2}
+.pn img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.55)}
+.pn div{position:absolute;left:clamp(1.2rem,4vw,3.5rem);right:1.5rem;bottom:2.5rem}
+.pn h3{font-size:clamp(2.4rem,5vw,4.5rem)}.pn small{font:700 .8rem var(--f2);letter-spacing:.04em;color:var(--orange)}
+.pn p{max-width:38ch;margin-top:.8rem}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}.tags span{border:1px solid rgba(255,244,230,.5);border-radius:99px;padding:.25rem .9rem;font-size:.85rem}
+/* nilai */
+#nilai h2{max-width:14ch}.vm{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin:3rem 0 4rem}
+.vm h3{font-size:2.2rem;color:var(--red);margin-bottom:.6rem}
+.nl{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.nc{padding:2rem;border-radius:22px;background:#fff;transition:.4s}.nc:hover{background:var(--red);color:#fff;transform:translateY(-8px)}
+.nc img{width:96px;margin-bottom:1rem}.nc h3{font-size:1.6rem;margin-bottom:.5rem}.nc p{font-size:.95rem}
+/* distribusi */
+#dist{background:var(--wine);color:var(--cream);text-align:center;overflow:hidden}
+#dist img{margin:2rem auto 0;width:min(760px,90%)}#dist p{max-width:60ch;margin:1.5rem auto 0}
+/* inovasi */
+#inov{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem);align-items:center}
+#inov .n{font:300 italic clamp(8rem,22vw,18rem)/.85 var(--f1);color:var(--red)}
+#inov .im{border-radius:24px;overflow:hidden;aspect-ratio:3/4}#inov .im img{width:100%;height:100%;object-fit:cover}
+/* kontak */
+#kontak{background:var(--red);color:var(--cream)}
+#kontak .g{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem);margin-top:3rem}
+form{display:grid;gap:1rem}
+input,textarea,select{width:100%;background:transparent;border:0;border-bottom:1.5px solid rgba(255,244,230,.6);color:var(--cream);padding:.8rem 0;font:inherit}
+select option{color:#000}::placeholder{color:rgba(255,244,230,.7)}
+button.go{justify-self:start;background:var(--cream);color:var(--red);border:0;border-radius:99px;padding:1rem 2.2rem;font:700 1rem var(--f2);cursor:pointer;transition:.3s}button.go:hover{background:var(--ink);color:var(--cream)}
+#st{min-height:1.5em;font-weight:700}
+footer{background:var(--ink);color:var(--cream);padding:2rem clamp(1.2rem,6vw,6rem);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.9rem}
+@media(max-width:800px){#tentang,#inov,#kontak .g,.vm{grid-template-columns:1fr}.nl{grid-template-columns:1fr 1fr}.sp{flex-direction:column;height:auto}.pn{min-height:70svh}.trk{overflow-x:auto;width:auto;scroll-snap-type:x mandatory}.pc{scroll-snap-align:center}}
+@media(max-width:480px){.nl{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div id="load"><b>0%</b></div>
+<header><a href="#hero" aria-label="Beranda"><img src="assets/logo.webp" alt="Logo Jaya Prima Nussa"></a><button id="mb" aria-expanded="false">Menu</button></header>
+<nav id="menu" aria-label="Menu utama"><button id="mx">Tutup</button>
+<a href="#tentang">Tentang Kami</a><a href="#produk">Produk</a><a href="#siapa">Untuk Siapa</a><a href="#nilai">Visi &amp; Nilai</a><a href="#dist">Distribusi</a><a href="#inov">Inovasi</a><a href="#kontak">Kontak</a></nav>
+
+<section id="hero">
+<div class="sl"><img src="assets/hero-bowls.webp" alt="Aneka masakan Nusantara"></div>
+<div class="sl"><img src="assets/lineup.webp" alt="Produk Vijimoto, Galaxy, M59"></div>
+<div class="sl"><img src="assets/factory.webp" alt="Fasilitas produksi"></div>
+<div class="hc"><h1 aria-label="Membangun Rasa"><span class="ln"><span>Membangun</span></span><span class="ln"><span>Rasa…</span></span></h1>
+<p>Mengharmonikan cita rasa kuliner Nusantara melalui kualitas dan inovasi tanpa henti.</p></div>
+<div class="dots"><i class="on"></i><i></i><i></i></div>
+</section>
+
+<section id="tentang" class="wrap">
+<div class="im"><img src="assets/factory2.webp" alt="Gudang dan produksi" loading="lazy"></div>
+<div><h2>Dekat dengan dapur Indonesia.</h2>
+<p>Jaya Prima Nussa bergerak di penjualan dan pemasokan penyedap rasa serta bumbu makanan, untuk rumah tangga, pelaku usaha kuliner, toko, grosir hingga mitra distribusi. Melalui Galaxy, M59, dan Vijimoto, kami tumbuh dari pemasok lokal menuju jangkauan nasional.</p>
+<p>Bagi kami, pertumbuhan bukan hanya memperluas penjualan, tetapi membangun kepercayaan: mudah dijangkau, responsif, dan terbuka bagi mitra usaha di sektor pangan dan perdagangan.</p>
+<div class="stats"><div><b data-n="6">0</b><span>merek produk</span></div><div><b data-n="30">0</b><span>produk baru menyusul</span></div><div><b data-n="6">0</b><span>pulau utama terjangkau</span></div></div></div>
+</section>
+
+<section id="produk"><div class="top"><h2>Produk kami</h2><p style="margin-top:1rem;max-width:50ch">Produsen produk penyedap bumbu dan bahan baku makanan (FMCG Food). Geser untuk melihat semuanya.</p></div>
+<div class="trk">
+<article class="pc"><div class="ph"><img src="assets/vijimoto.webp" alt="Vijimoto MSG murni" loading="lazy"></div><div class="tx"><h3>Vijimoto</h3><p>MSG murni kemurnian 99%. Memperkuat rasa gurih agar lebih nikmat, seimbang, dan konsisten.</p></div></article>
+<article class="pc"><div class="ph"><img src="assets/galaxy.webp" alt="Galaxy" loading="lazy"></div><div class="tx"><h3>Galaxy</h3><p>Penyedap rasa untuk masakan harian rumah tangga dan usaha kuliner.</p></div></article>
+<article class="pc"><div class="ph"><img src="assets/m59.webp" alt="M59" loading="lazy"></div><div class="tx"><h3>M59</h3><p>Monosodium glutamat kemasan 250 gr, praktis untuk berbagai aplikasi kuliner.</p></div></article>
+<article class="pc"><div class="ph"><img src="assets/m56.webp" alt="M56 dan M5000" loading="lazy"></div><div class="tx"><h3>M56 &amp; M5000</h3><p>MSG campuran (mixed MSG): penggunaan lebih efisien dan sesuai kebutuhan.</p></div></article>
+<article class="pc"><div class="ph"><img src="assets/tepung.webp" alt="Vijimoto Tepung Bakso Komplit" loading="lazy"></div><div class="tx"><h3>Vijimoto Premix</h3><p>Tepung Bakso Komplit: campuran siap pakai untuk penggunaan lebih praktis.</p></div></article>
+</div></section>
+
+<section id="siapa"><div class="sp">
+<div class="pn on"><img src="assets/shop1.webp" alt="Pedagang pasar" loading="lazy"><div><small>B2C</small><h3>Konsumen rumah tangga</h3><p>Untuk keluarga dan pengguna harian yang butuh penyedap rasa praktis pada masakan rumahan. Tersedia lewat jaringan distribusi nasional, toko retail konvensional dan modern.</p></div></div>
+<div class="pn"><img src="assets/shop2.webp" alt="Toko grosir" loading="lazy"><div><small>B2B</small><h3>Pelaku usaha &amp; mitra dagang</h3><p>Untuk warung makan, UMKM kuliner, katering, toko sembako, grosir, reseller, dan distributor.</p><div class="tags"><span>Produsen makanan &amp; bumbu instan</span><span>Horeka</span><span>UMKM kuliner</span></div></div></div>
+</div></section>
+
+<section id="nilai" class="wrap"><h2>Visi, misi, dan nilai kami.</h2>
+<div class="vm"><div><h3>Visi</h3><p>Menjadi pemasok penyedap rasa dan bumbu makanan yang dekat dengan kebutuhan pasar lokal serta terus berkembang menuju jaringan distribusi nasional.</p></div>
+<div><h3>Misi</h3><p>Menyediakan produk yang praktis dan relevan. Membangun hubungan yang dekat dan responsif dengan pelanggan dan mitra. Mengembangkan distribusi dari pasar lokal ke pasar nasional.</p></div></div>
+<div class="nl">
+<div class="nc"><img src="assets/ic-mutu.webp" alt="" loading="lazy"><h3>Produk berkualitas</h3><p>Lahir dari R&amp;D yang teruji demi keamanan pangan dan cita rasa yang konsisten.</p></div>
+<div class="nc"><img src="assets/ic-harga.webp" alt="" loading="lazy"><h3>Harga bersaing</h3><p>Struktur harga efisien bagi konsumen akhir maupun rantai produksi mitra.</p></div>
+<div class="nc"><img src="assets/ic-pasar.webp" alt="" loading="lazy"><h3>Dekat dengan pasar</h3><p>Pasokan tersedia di pasar lokal hingga pusat perbelanjaan.</p></div>
+<div class="nc"><img src="assets/ic-distribusi.webp" alt="" loading="lazy"><h3>Jaringan distribusi nasional</h3><p>Logistik yang menjangkau hampir seluruh wilayah strategis nasional.</p></div>
+<div class="nc"><img src="assets/ic-inovasi.webp" alt="" loading="lazy"><h3>Inovasi berkelanjutan</h3><p>Produk baru diluncurkan berkala menjawab dinamika permintaan pasar.</p></div>
+<div class="nc"><img src="assets/ic-mitra.webp" alt="" loading="lazy"><h3>Mitra adalah keluarga</h3><p>Program komersial terbaik: promosi interaktif dan paket bundling.</p></div>
+</div></section>
+
+<section id="dist" class="wrap"><h2>Dari Sumatra sampai Nusa Tenggara.</h2>
+<img src="assets/ic-distribusi.webp" alt="Peta distribusi Indonesia" loading="lazy">
+<p>Jaringan kami mencakup Sumatra, Jawa, Kalimantan, Sulawesi, Bali, hingga Nusa Tenggara: seluruh area utama Indonesia kecuali Papua.</p></section>
+
+<section id="inov" class="wrap"><div><div class="n" data-n="30">0</div><h2 style="margin-top:1rem">produk baru inovatif, segera hadir.</h2>
+<p style="margin-top:1.5rem;max-width:52ch">Melalui riset dan pengembangan (R&amp;D) yang mendalam, higienis, dan terukur, kami menghadirkannya bertahap untuk melengkapi kebutuhan industri kuliner dan dapur Anda.</p></div>
+<div class="im"><img src="assets/innovation.webp" alt="Rempah dan bahan baku" loading="lazy"></div></section>
+
+<section id="kontak" class="wrap"><h2>Mari bermitra.</h2>
+<div class="g"><div><p>Jaya Prima Nussa<br>Jl. Kemayoran Baru 47, Surabaya, Indonesia</p><p style="margin-top:1rem">Telepon: <a href="tel:+62313523801">(031) 3523801</a><br>Email: <a href="mailto:jayausahasby@gmail.com">jayausahasby@gmail.com</a></p></div>
+<form id="f"><input name="nama" placeholder="Nama" required><input name="perusahaan" placeholder="Perusahaan / usaha"><input name="kontak" placeholder="Email atau WhatsApp" required>
+<select name="jenis"><option>Distributor / agen</option><option>Grosir / toko</option><option>Horeka / UMKM</option><option>Produsen makanan</option><option>Lainnya</option></select>
+<textarea name="pesan" rows="3" placeholder="Kebutuhan Anda"></textarea><input name="website" tabindex="-1" autocomplete="off" style="display:none">
+<button class="go">Kirim pesan</button><div id="st" role="status"></div></form></div></section>
+<footer><span>© 2026 Jaya Prima Nussa</span><span>Surabaya, Indonesia</span></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="config.js"></script>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+gsap.registerPlugin(ScrollTrigger);
+const calm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+// loader → hero intro (satu momen utama)
+const L=$('#load b');let v={p:0};
+gsap.to(v,{p:100,duration:calm?.2:1.6,ease:'power2.inOut',onUpdate:()=>L.textContent=Math.round(v.p)+'%',onComplete:()=>{
+ gsap.timeline().to('#load',{yPercent:-100,duration:1,ease:'expo.inOut'})
+ .to('.hc h1 .ln>span',{y:0,duration:1.3,stagger:.18,ease:'expo.out'},'-=.4')
+ .to('.hc p',{opacity:1,duration:1},'-=.6').set('#load',{display:'none'});}});
+// slideshow besar + Ken Burns
+const sl=$$('.sl'),dt=$$('.dots i');let c=0;
+function kb(i){gsap.fromTo(sl[i].querySelector('img'),{scale:1.15},{scale:1,duration:7,ease:'none'})}kb(0);
+setInterval(()=>{const n=(c+1)%sl.length;kb(n);
+ gsap.to(sl[c],{opacity:0,duration:1.4});gsap.to(sl[n],{opacity:1,duration:1.4});
+ dt[c].classList.remove('on');dt[n].classList.add('on');c=n},5500);
+// menu
+const M=$('#menu'),open=o=>{gsap.to(M,{clipPath:o?'circle(150% at calc(100% - 3rem) 2.5rem)':'circle(0% at calc(100% - 3rem) 2.5rem)',duration:.9,ease:'expo.inOut',onStart:()=>{if(o)M.style.visibility='visible'},onComplete:()=>{if(!o)M.style.visibility='hidden'}});$('#mb').setAttribute('aria-expanded',o)};
+$('#mb').onclick=()=>open(true);$('#mx').onclick=()=>open(false);$$('#menu a').forEach(a=>a.onclick=()=>open(false));
+if(!calm){
+ // parallax gambar tentang
+ gsap.to('#tentang .im img',{yPercent:-14,ease:'none',scrollTrigger:{trigger:'#tentang',scrub:true}});
+ // produk: scroll horizontal ter-pin (desktop)
+ ScrollTrigger.matchMedia({'(min-width:801px)':()=>{const t=$('.trk');
+  gsap.to(t,{x:()=>-(t.scrollWidth-innerWidth),ease:'none',scrollTrigger:{trigger:'#produk',pin:true,scrub:.6,end:()=>'+='+t.scrollWidth,invalidateOnRefresh:true}})}});
+ // judul terungkap saat scroll
+ $$('h2').forEach(h=>gsap.from(h,{y:60,opacity:0,duration:1.2,ease:'expo.out',scrollTrigger:{trigger:h,start:'top 85%'}}));
+ gsap.from('.nc',{y:60,opacity:0,stagger:.1,duration:.9,scrollTrigger:{trigger:'.nl',start:'top 80%'}});
+}
+// counter
+$$('[data-n]').forEach(e=>{const n=+e.dataset.n,o={x:0};ScrollTrigger.create({trigger:e,start:'top 90%',once:true,onEnter:()=>gsap.to(o,{x:n,duration:calm?.1:2,ease:'power2.out',onUpdate:()=>e.textContent=Math.round(o.x)})})});
+// panel B2C/B2B
+$$('.pn').forEach(p=>{p.onmouseenter=p.onclick=()=>{$$('.pn').forEach(q=>q.classList.toggle('on',q===p))}});
+// form → Supabase
+$('#f').onsubmit=async e=>{e.preventDefault();const st=$('#st'),d=Object.fromEntries(new FormData(e.target));
+ if(d.website)return;delete d.website;
+ if(!window.SUPABASE_URL||SUPABASE_URL.includes('ISI_')){st.textContent='Supabase belum dikonfigurasi (config.js).';return}
+ st.textContent='Mengirim…';
+ const sb=supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
+ const {error}=await sb.from('inquiries').insert(d);
+ st.textContent=error?'Gagal mengirim. Coba lagi atau hubungi kami lewat telepon.':'Terima kasih, pesan Anda sudah kami terima.';
+ if(!error)e.target.reset()};
+</script>
+</body>
+</html>
