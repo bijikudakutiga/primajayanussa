@@ -22,11 +22,33 @@ h2{font-size:clamp(2.4rem,6vw,5.4rem)}
 /* nav */
 header{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:1.1rem clamp(1.2rem,4vw,3rem);color:#fff;mix-blend-mode:normal}
 header img{height:46px;background:#fff;border-radius:10px;padding:5px}
-#mb{background:none;border:1.5px solid #fff;color:#fff;border-radius:99px;padding:.6rem 1.3rem;font:700 .85rem var(--f2);cursor:pointer;backdrop-filter:blur(8px);background:rgba(0,0,0,.18)}
-#menu{position:fixed;inset:0;z-index:60;background:var(--wine);color:var(--cream);display:flex;flex-direction:column;justify-content:center;padding:0 clamp(1.5rem,8vw,8rem);clip-path:circle(0 at calc(100% - 3rem) 2.5rem);visibility:hidden}
-#menu a{font:300 clamp(2.4rem,7vw,5.5rem)/1.15 var(--f1);display:block;width:max-content;transition:.3s}
-#menu a:hover{color:var(--orange);transform:translateX(1.2rem);font-style:italic}
-#mx{position:absolute;top:1.3rem;right:clamp(1.2rem,4vw,3rem);background:none;border:1.5px solid var(--cream);color:var(--cream);border-radius:99px;padding:.6rem 1.3rem;font:700 .85rem var(--f2);cursor:pointer}
+#mb{background:none;border:1.5px solid #fff;color:#fff;border-radius:99px;padding:.6rem 1.3rem;font:700 .85rem var(--f2);cursor:pointer;backdrop-filter:blur(8px);background:rgba(43,13,9,.65)}
+#menu{position:fixed;inset:0;z-index:60;background:var(--wine);color:var(--cream);display:grid;grid-template-columns:1.1fr .9fr;clip-path:circle(0 at calc(100% - 3rem) 2.5rem);visibility:hidden}
+.mn-l{display:flex;flex-direction:column;justify-content:center;padding:5.5rem clamp(1.5rem,6vw,6rem) 2rem;overflow-y:auto}
+.mn-l li{list-style:none;overflow:hidden;border-bottom:1px solid rgba(255,244,230,.16)}
+.mn-l a{display:flex;align-items:baseline;justify-content:space-between;gap:1.5rem;padding:.5rem 0;transition:.4s}
+.mn-l b{font:300 clamp(2rem,4.6vw,4rem)/1.1 var(--f1)}.mn-l small{font-size:.85rem;opacity:.65;text-align:right;max-width:24ch}
+.mn-l a:hover,.mn-l a:focus-visible{padding-left:1.2rem;color:var(--orange)}.mn-l a:hover b{font-style:italic}
+.mn-f{margin-top:2rem;font-size:.9rem;opacity:.8}
+.mn-r{position:relative;overflow:hidden}.mn-r::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--wine),transparent 35%)}
+.mn-r img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.1);transition:opacity .7s,transform 1.2s}.mn-r img.on{opacity:1;transform:scale(1)}
+#mx,#pdX{position:absolute;z-index:3;top:1.3rem;right:clamp(1.2rem,4vw,3rem);background:rgba(43,13,9,.6);border:1.5px solid var(--cream);color:var(--cream);border-radius:99px;padding:.6rem 1.3rem;font:700 .85rem var(--f2);cursor:pointer}
+#pd{position:fixed;inset:0;z-index:70;background:var(--cream);overflow-y:auto;overscroll-behavior:contain;visibility:hidden}
+.pd-in{display:grid;grid-template-columns:1fr 1fr;min-height:100svh}
+.pd-v{position:relative;background:var(--red);display:grid;place-items:center;padding:5rem 2rem 3rem;overflow:hidden}
+.pd-v::before{content:"";position:absolute;width:90%;aspect-ratio:1;border-radius:50%;background:var(--orange)}
+.pd-v img{position:relative;width:min(100%,520px);aspect-ratio:4/5;object-fit:contain;background:#fff;border-radius:24px;box-shadow:0 40px 80px rgba(43,13,9,.45)}
+.pd-t{padding:6rem clamp(1.5rem,5vw,5rem) 3rem}.pd-t h2{font-size:clamp(3rem,7vw,6rem);font-style:italic}
+.pd-c{display:inline-block;background:var(--red);color:#fff;border-radius:99px;padding:.25rem 1rem;font-size:.85rem;font-weight:700;margin-bottom:1rem}
+.pd-t p{max-width:52ch;margin-top:1.2rem}.pd-t dl{margin:2rem 0;border-top:1px solid rgba(43,13,9,.2)}
+.pd-t dl div{display:flex;justify-content:space-between;gap:1rem;padding:.8rem 0;border-bottom:1px solid rgba(43,13,9,.2)}
+.pd-t dt{opacity:.65}.pd-t dd{text-align:right;font-weight:700}.pd-t .tags span{border-color:rgba(43,13,9,.35)}
+.pd-nav{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.8rem}
+.btn{border-radius:99px;padding:.9rem 1.8rem;font:700 .95rem var(--f2);cursor:pointer;border:1.5px solid var(--ink);background:none;color:var(--ink)}.btn.p{background:var(--red);border-color:var(--red);color:#fff}
+.pd-g{grid-column:1/-1;display:flex;gap:1rem;overflow-x:auto;padding:0 clamp(1.5rem,5vw,5rem) 4rem}.pd-g img{height:min(46vh,380px);border-radius:18px;flex:none}
+#wa{background:transparent;color:var(--cream);border:1.5px solid var(--cream)}
+@media(max-width:800px){#menu,.pd-in{grid-template-columns:1fr}.mn-r,.mn-l small{display:none}.pn{flex:none}}
+@media(min-width:801px){.pn:not(.on) p,.pn:not(.on) .tags{display:none}.pn:not(.on) h3{font-size:clamp(1.6rem,2.6vw,2.4rem)}}
 /* hero */
 #hero{position:relative;height:100svh;min-height:560px;overflow:hidden;background:var(--wine);color:#fff}
 .sl{position:absolute;inset:0;opacity:0}.sl img{width:100%;height:100%;object-fit:cover;transform:scale(1.15)}
@@ -34,7 +56,7 @@ header img{height:46px;background:#fff;border-radius:10px;padding:5px}
 #hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,13,9,.45),rgba(43,13,9,.1) 40%,rgba(43,13,9,.85))}
 .hc{position:absolute;z-index:2;left:clamp(1.2rem,6vw,6rem);right:1.2rem;bottom:clamp(2rem,9vh,6rem)}
 .hc h1{font-size:clamp(3.4rem,13vw,12rem);font-style:italic}
-.hc h1 span{display:inline-block;transform:translateY(110%)}.hc .ln{overflow:hidden;display:block}
+.hc h1 .ln>span{display:inline-block;transform:translateY(110%)}.hc .ln{overflow:hidden;display:block;padding-bottom:.1em}
 .hc p{max-width:34ch;margin-top:1.4rem;font-size:1.15rem;opacity:0}
 .dots{position:absolute;z-index:2;right:clamp(1.2rem,4vw,3rem);bottom:clamp(2rem,9vh,6rem);display:flex;gap:.5rem}
 .dots i{width:34px;height:3px;background:rgba(255,255,255,.4)}.dots i.on{background:var(--orange)}
@@ -45,20 +67,20 @@ header img{height:46px;background:#fff;border-radius:10px;padding:5px}
 #tentang p{margin-top:1.5rem;max-width:56ch}
 .stats{display:flex;gap:2.5rem;margin-top:2.2rem;flex-wrap:wrap}.stats b{font:300 3rem var(--f1);color:var(--red);display:block;line-height:1}.stats span{font-size:.9rem}
 /* produk */
-#produk{background:var(--red);color:var(--cream);overflow:hidden}
+#produk{background:var(--red);color:var(--cream);overflow:hidden;min-height:100svh;display:flex;flex-direction:column;justify-content:center}
 #produk .top{padding:clamp(4rem,9vw,7rem) clamp(1.2rem,6vw,6rem) 2rem}
 .trk{display:flex;gap:2rem;padding:0 clamp(1.2rem,6vw,6rem) 4rem;width:max-content}
-.pc{width:min(78vw,430px);flex:none;background:var(--cream);color:var(--ink);border-radius:26px;overflow:hidden}
-.pc .ph{height:min(52vh,420px);background:radial-gradient(circle at 50% 60%,#fff,#FFE3C4);display:grid;place-items:center}
-.pc img{max-height:88%;transition:transform .6s cubic-bezier(.2,.8,.2,1)}.pc:hover img{transform:scale(1.08) rotate(-3deg)}
-.pc div.tx{padding:1.4rem 1.6rem 1.8rem}.pc h3{font-size:2rem}.pc p{font-size:.95rem;margin-top:.4rem}
+.pc{display:block;cursor:pointer;width:min(78vw,430px);flex:none;background:var(--cream);color:var(--ink);border-radius:26px;overflow:hidden}
+.pc .ph{position:relative;height:min(52vh,420px);background:#fff;overflow:hidden}
+.pc img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:transform .6s cubic-bezier(.2,.8,.2,1)}.pc:hover img{transform:scale(1.08) rotate(-3deg)}
+.pc div.tx{padding:1.4rem 1.6rem 1.8rem}.pc div.tx{position:relative;padding-right:4.6rem}.pc b{position:absolute;right:1.4rem;bottom:1.6rem;width:2.6rem;height:2.6rem;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font:400 1.5rem var(--f2);transition:.3s}.pc:hover b{transform:rotate(90deg);background:var(--ink)}.pc h3{font-size:2rem}.pc p{font-size:.95rem;margin-top:.4rem}
 /* untuk siapa */
 #siapa{background:var(--ink);color:var(--cream);padding:0}
 .sp{display:flex;height:100svh;min-height:520px}
 .pn{position:relative;flex:1;overflow:hidden;transition:flex .8s cubic-bezier(.7,0,.2,1);cursor:pointer}
 .pn:hover,.pn.on{flex:2.2}
 .pn img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.55)}
-.pn div{position:absolute;left:clamp(1.2rem,4vw,3.5rem);right:1.5rem;bottom:2.5rem}
+.pn>div{position:absolute;left:clamp(1.2rem,4vw,3.5rem);right:1.5rem;bottom:2.5rem}
 .pn h3{font-size:clamp(2.4rem,5vw,4.5rem)}.pn small{font:700 .8rem var(--f2);letter-spacing:.04em;color:var(--orange)}
 .pn p{max-width:38ch;margin-top:.8rem}
 .tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}.tags span{border:1px solid rgba(255,244,230,.5);border-radius:99px;padding:.25rem .9rem;font-size:.85rem}
@@ -92,8 +114,7 @@ footer{background:var(--ink);color:var(--cream);padding:2rem clamp(1.2rem,6vw,6r
 <body>
 <div id="load"><b>0%</b></div>
 <header><a href="#hero" aria-label="Beranda"><img src="assets/logo.webp" alt="Logo Jaya Prima Nussa"></a><button id="mb" aria-expanded="false">Menu</button></header>
-<nav id="menu" aria-label="Menu utama"><button id="mx">Tutup</button>
-<a href="#tentang">Tentang Kami</a><a href="#produk">Produk</a><a href="#siapa">Untuk Siapa</a><a href="#nilai">Visi &amp; Nilai</a><a href="#dist">Distribusi</a><a href="#inov">Inovasi</a><a href="#kontak">Kontak</a></nav>
+<nav id="menu" aria-label="Menu utama"><button id="mx">Tutup</button><div class="mn-l"><ul><li><a href="#tentang"><b>Tentang Kami</b><small>Profil perusahaan</small></a></li><li><a href="#produk"><b>Produk</b><small>Vijimoto, Galaxy, M59, dan lainnya</small></a></li><li><a href="#siapa"><b>Untuk Siapa</b><small>Rumah tangga, Horeka, UMKM, distributor</small></a></li><li><a href="#nilai"><b>Visi & Nilai</b><small>Arah dan prinsip kerja kami</small></a></li><li><a href="#dist"><b>Distribusi</b><small>Dari Sumatra sampai Nusa Tenggara</small></a></li><li><a href="#inov"><b>Inovasi</b><small>30 produk baru segera hadir</small></a></li><li><a href="#kontak"><b>Kontak</b><small>Ajukan kemitraan</small></a></li></ul><div class="mn-f">Jl. Kemayoran Baru 47, Surabaya<br>(031) 3523801, jayausahasby@gmail.com</div></div><div class="mn-r"><img class=on src="assets/factory2.webp" alt=""><img src="assets/lineup.webp" alt=""><img src="assets/shop2.webp" alt=""><img src="assets/hero-bowls.webp" alt=""><img src="assets/market.webp" alt=""><img src="assets/innovation.webp" alt=""><img src="assets/group.webp" alt=""></div></nav>
 
 <section id="hero">
 <div class="sl"><img src="assets/hero-bowls.webp" alt="Aneka masakan Nusantara"></div>
@@ -109,16 +130,16 @@ footer{background:var(--ink);color:var(--cream);padding:2rem clamp(1.2rem,6vw,6r
 <div><h2>Dekat dengan dapur Indonesia.</h2>
 <p>Jaya Prima Nussa bergerak di penjualan dan pemasokan penyedap rasa serta bumbu makanan, untuk rumah tangga, pelaku usaha kuliner, toko, grosir hingga mitra distribusi. Melalui Galaxy, M59, dan Vijimoto, kami tumbuh dari pemasok lokal menuju jangkauan nasional.</p>
 <p>Bagi kami, pertumbuhan bukan hanya memperluas penjualan, tetapi membangun kepercayaan: mudah dijangkau, responsif, dan terbuka bagi mitra usaha di sektor pangan dan perdagangan.</p>
-<div class="stats"><div><b data-n="6">0</b><span>merek produk</span></div><div><b data-n="30">0</b><span>produk baru menyusul</span></div><div><b data-n="6">0</b><span>pulau utama terjangkau</span></div></div></div>
+<div class="stats"><div><b data-n="6">0</b><span>merek produk</span></div><div><b data-n="30">0</b><span>produk baru menyusul</span></div><div><b data-n="6">0</b><span>wilayah utama terjangkau</span></div></div></div>
 </section>
 
 <section id="produk"><div class="top"><h2>Produk kami</h2><p style="margin-top:1rem;max-width:50ch">Produsen produk penyedap bumbu dan bahan baku makanan (FMCG Food). Geser untuk melihat semuanya.</p></div>
 <div class="trk">
-<article class="pc"><div class="ph"><img src="assets/vijimoto.webp" alt="Vijimoto MSG murni" loading="lazy"></div><div class="tx"><h3>Vijimoto</h3><p>MSG murni kemurnian 99%. Memperkuat rasa gurih agar lebih nikmat, seimbang, dan konsisten.</p></div></article>
-<article class="pc"><div class="ph"><img src="assets/galaxy.webp" alt="Galaxy" loading="lazy"></div><div class="tx"><h3>Galaxy</h3><p>Penyedap rasa untuk masakan harian rumah tangga dan usaha kuliner.</p></div></article>
-<article class="pc"><div class="ph"><img src="assets/m59.webp" alt="M59" loading="lazy"></div><div class="tx"><h3>M59</h3><p>Monosodium glutamat kemasan 250 gr, praktis untuk berbagai aplikasi kuliner.</p></div></article>
-<article class="pc"><div class="ph"><img src="assets/m56.webp" alt="M56 dan M5000" loading="lazy"></div><div class="tx"><h3>M56 &amp; M5000</h3><p>MSG campuran (mixed MSG): penggunaan lebih efisien dan sesuai kebutuhan.</p></div></article>
-<article class="pc"><div class="ph"><img src="assets/tepung.webp" alt="Vijimoto Tepung Bakso Komplit" loading="lazy"></div><div class="tx"><h3>Vijimoto Premix</h3><p>Tepung Bakso Komplit: campuran siap pakai untuk penggunaan lebih praktis.</p></div></article>
+<a class="pc" href="#produk/vijimoto" data-id="vijimoto"><div class="ph"><img src="assets/vijimoto.webp" alt="Vijimoto MSG murni" loading="lazy"></div><div class="tx"><h3>Vijimoto</h3><p>MSG murni kemurnian 99%. Memperkuat rasa gurih agar lebih nikmat, seimbang, dan konsisten.</p><b aria-hidden="true">+</b></div></a>
+<a class="pc" href="#produk/galaxy" data-id="galaxy"><div class="ph"><img src="assets/galaxy.webp" alt="Galaxy" loading="lazy"></div><div class="tx"><h3>Galaxy</h3><p>MSG murni kemurnian +99% untuk memperkuat rasa gurih masakan.</p><b aria-hidden="true">+</b></div></a>
+<a class="pc" href="#produk/m59" data-id="m59"><div class="ph"><img src="assets/m59.webp" alt="M59" loading="lazy"></div><div class="tx"><h3>M59</h3><p>MSG campuran yang praktis dan efisien untuk berbagai aplikasi kuliner.</p><b aria-hidden="true">+</b></div></a>
+<a class="pc" href="#produk/m56" data-id="m56"><div class="ph"><img src="assets/m56.webp" alt="M56 dan M5000" loading="lazy"></div><div class="tx"><h3>M56 &amp; M5000</h3><p>MSG campuran (mixed MSG): penggunaan lebih efisien dan sesuai kebutuhan.</p><b aria-hidden="true">+</b></div></a>
+<a class="pc" href="#produk/premix" data-id="premix"><div class="ph"><img src="assets/tepung.webp" alt="Vijimoto Tepung Bakso Komplit" loading="lazy"></div><div class="tx"><h3>Vijimoto Premix</h3><p>Tepung Bakso Komplit: campuran siap pakai untuk penggunaan lebih praktis.</p><b aria-hidden="true">+</b></div></a>
 </div></section>
 
 <section id="siapa"><div class="sp">
@@ -139,7 +160,7 @@ footer{background:var(--ink);color:var(--cream);padding:2rem clamp(1.2rem,6vw,6r
 </div></section>
 
 <section id="dist" class="wrap"><h2>Dari Sumatra sampai Nusa Tenggara.</h2>
-<img src="assets/ic-distribusi.webp" alt="Peta distribusi Indonesia" loading="lazy">
+<img src="assets/ic-distribusi-lg.webp" alt="Peta distribusi Indonesia" loading="lazy">
 <p>Jaringan kami mencakup Sumatra, Jawa, Kalimantan, Sulawesi, Bali, hingga Nusa Tenggara: seluruh area utama Indonesia kecuali Papua.</p></section>
 
 <section id="inov" class="wrap"><div><div class="n" data-n="30">0</div><h2 style="margin-top:1rem">produk baru inovatif, segera hadir.</h2>
@@ -151,10 +172,12 @@ footer{background:var(--ink);color:var(--cream);padding:2rem clamp(1.2rem,6vw,6r
 <form id="f"><input name="nama" placeholder="Nama" required><input name="perusahaan" placeholder="Perusahaan / usaha"><input name="kontak" placeholder="Email atau WhatsApp" required>
 <select name="jenis"><option>Distributor / agen</option><option>Grosir / toko</option><option>Horeka / UMKM</option><option>Produsen makanan</option><option>Lainnya</option></select>
 <textarea name="pesan" rows="3" placeholder="Kebutuhan Anda"></textarea><input name="website" tabindex="-1" autocomplete="off" style="display:none">
-<button class="go">Kirim pesan</button><div id="st" role="status"></div></form></div></section>
+<button class="go">Kirim pesan</button><button type="button" class="go" id="wa" hidden>Kirim lewat WhatsApp</button><div id="st" role="status"></div></form></div></section>
 <footer><span>© 2026 Jaya Prima Nussa</span><span>Surabaya, Indonesia</span></footer>
 
+<div id="pd" role="dialog" aria-modal="true" aria-label="Detail produk"><button id="pdX">Tutup</button><div class="pd-in"><div class="pd-v"><img id="pdI" alt=""></div><div class="pd-t"><span class="pd-c" id="pdC"></span><h2 id="pdN"></h2><p id="pdP"></p><dl id="pdS"></dl><div class="tags" id="pdF"></div><div class="pd-nav"><button class="btn p" id="pdQ">Tanya produk ini</button><button class="btn" id="pdPrev">Sebelumnya</button><button class="btn" id="pdNext">Berikutnya</button></div></div><div class="pd-g" id="pdG"></div></div></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<div id="pd" role="dialog" aria-modal="true" aria-label="Detail produk"><button id="pdX">Tutup</button><div class="pd-in"><div class="pd-v"><img id="pdI" alt=""></div><div class="pd-t"><span class="pd-c" id="pdC"></span><h2 id="pdN"></h2><p id="pdP"></p><dl id="pdS"></dl><div class="tags" id="pdF"></div><div class="pd-nav"><button class="btn p" id="pdQ">Tanya produk ini</button><button class="btn" id="pdPrev">Sebelumnya</button><button class="btn" id="pdNext">Berikutnya</button></div></div><div class="pd-g" id="pdG"></div></div></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
 <script src="config.js"></script>
@@ -175,8 +198,12 @@ setInterval(()=>{const n=(c+1)%sl.length;kb(n);
  gsap.to(sl[c],{opacity:0,duration:1.4});gsap.to(sl[n],{opacity:1,duration:1.4});
  dt[c].classList.remove('on');dt[n].classList.add('on');c=n},5500);
 // menu
-const M=$('#menu'),open=o=>{gsap.to(M,{clipPath:o?'circle(150% at calc(100% - 3rem) 2.5rem)':'circle(0% at calc(100% - 3rem) 2.5rem)',duration:.9,ease:'expo.inOut',onStart:()=>{if(o)M.style.visibility='visible'},onComplete:()=>{if(!o)M.style.visibility='hidden'}});$('#mb').setAttribute('aria-expanded',o)};
-$('#mb').onclick=()=>open(true);$('#mx').onclick=()=>open(false);$$('#menu a').forEach(a=>a.onclick=()=>open(false));
+const M=$('#menu'),mi=$$('.mn-r img');
+const openM=o=>{const t=gsap.timeline();t.to(M,{clipPath:o?'circle(150% at calc(100% - 3rem) 2.5rem)':'circle(0% at calc(100% - 3rem) 2.5rem)',duration:calm?.01:.9,ease:'expo.inOut',onStart:()=>{if(o)M.style.visibility='visible'},onComplete:()=>{if(!o)M.style.visibility='hidden'}});
+ if(o&&!calm)t.fromTo('.mn-l li a',{yPercent:110},{yPercent:0,stagger:.06,duration:.8,ease:'expo.out'},.35);
+ $('#mb').setAttribute('aria-expanded',o);if(o)$('#mx').focus({preventScroll:true})};
+$('#mb').onclick=()=>openM(true);$('#mx').onclick=()=>openM(false);
+$$('.mn-l a').forEach((a,i)=>{a.onclick=()=>openM(false);a.onmouseenter=a.onfocus=()=>mi.forEach((m,j)=>m.classList.toggle('on',i===j))});
 if(!calm){
  // parallax gambar tentang
  gsap.to('#tentang .im img',{yPercent:-14,ease:'none',scrollTrigger:{trigger:'#tentang',scrub:true}});
@@ -191,15 +218,42 @@ if(!calm){
 $$('[data-n]').forEach(e=>{const n=+e.dataset.n,o={x:0};ScrollTrigger.create({trigger:e,start:'top 90%',once:true,onEnter:()=>gsap.to(o,{x:n,duration:calm?.1:2,ease:'power2.out',onUpdate:()=>e.textContent=Math.round(o.x)})})});
 // panel B2C/B2B
 $$('.pn').forEach(p=>{p.onmouseenter=p.onclick=()=>{$$('.pn').forEach(q=>q.classList.toggle('on',q===p))}});
-// form → Supabase
-$('#f').onsubmit=async e=>{e.preventDefault();const st=$('#st'),d=Object.fromEntries(new FormData(e.target));
- if(d.website)return;delete d.website;
- if(!window.SUPABASE_URL||SUPABASE_URL.includes('ISI_')){st.textContent='Supabase belum dikonfigurasi (config.js).';return}
- st.textContent='Mengirim…';
- const sb=supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
- const {error}=await sb.from('inquiries').insert(d);
- st.textContent=error?'Gagal mengirim. Coba lagi atau hubungi kami lewat telepon.':'Terima kasih, pesan Anda sudah kami terima.';
- if(!error)e.target.reset()};
+// detail produk
+const MSG='Produk premium dengan tingkat kemurnian tinggi yang dirancang untuk memperkuat rasa gurih pada berbagai jenis masakan, sehingga hasilnya lebih nikmat, seimbang, dan konsisten.';
+const MIX='Varian penyedap rasa campuran yang diformulasikan agar penggunaan lebih efisien, praktis, dan sesuai kebutuhan berbagai aplikasi kuliner.';
+const FIT=['Rumah tangga','Warung makan & UMKM kuliner','Horeka','Grosir & distributor'];
+const MS=[['Jenis','Monosodium glutamat (MSG) murni'],['Kemurnian','+99%'],['Kemasan','250 g'],['Fungsi','Penguat rasa']];
+const P=[{id:'vijimoto',n:'Vijimoto',c:'MSG murni',i:'vijimoto',d:MSG,s:MS,g:['hand','group']},
+{id:'galaxy',n:'Galaxy',c:'MSG murni',i:'galaxy',d:MSG,s:MS,g:['group','lineup']},
+{id:'m59',n:'M59',c:'MSG campuran',i:'m59',d:MIX,s:[['Jenis','MSG campuran (mixed MSG)'],['Kemasan','250 g'],['Fungsi','Penyedap rasa']],g:['m56','lineup']},
+{id:'m56',n:'M56 & M5000',c:'MSG campuran',i:'m56',d:MIX,s:[['Jenis','MSG campuran (mixed MSG)'],['Varian','M56 dan M5000'],['Fungsi','Penguat rasa']],g:['m59','lineup']},
+{id:'premix',n:'Vijimoto Premix',c:'Tepung bakso komplit',i:'tepung',d:'Campuran siap pakai untuk membuat bakso, disusun agar penggunaan lebih efisien dan praktis di dapur rumah maupun usaha kuliner.',s:[['Jenis','Premix tepung bakso'],['Varian','Tepung Bakso Komplit'],['Kemasan','250 g']],g:['scene-tepung','lineup']}];
+const pd=$('#pd');let cur=0,rect=null,deep=false;
+function fill(k){const p=P[k];cur=k;$('#pdI').src='assets/'+p.i+'.webp';$('#pdI').alt=p.n;$('#pdC').textContent=p.c;$('#pdN').textContent=p.n;$('#pdP').textContent=p.d;
+ $('#pdS').innerHTML=p.s.map(r=>`<div><dt>${r[0]}</dt><dd>${r[1]}</dd></div>`).join('');$('#pdF').innerHTML=FIT.map(t=>`<span>${t}</span>`).join('');
+ $('#pdG').innerHTML=p.g.map(g=>`<img src="assets/${g}.webp" alt="" loading="lazy">`).join('');pd.scrollTop=0}
+function show(id){const k=P.findIndex(p=>p.id===id);if(k<0)return;fill(k);pd.style.visibility='visible';const r=rect;
+ gsap.fromTo(pd,{clipPath:r?`inset(${r.top}px ${innerWidth-r.right}px ${innerHeight-r.bottom}px ${r.left}px round 26px)`:`inset(${innerHeight}px 0px 0px 0px round 0px)`},{clipPath:'inset(0px 0px 0px 0px round 0px)',duration:calm?.01:.9,ease:'expo.inOut'});
+ if(!calm){gsap.from('.pd-t>*',{y:40,opacity:0,stagger:.07,duration:.9,delay:.35,ease:'expo.out'});gsap.from('#pdI',{scale:.85,rotate:-4,duration:1.2,delay:.3,ease:'expo.out'})}
+ $('#pdX').focus({preventScroll:true})}
+const hide=()=>gsap.to(pd,{clipPath:`inset(0px 0px ${innerHeight}px 0px round 0px)`,duration:calm?.01:.7,ease:'expo.inOut',onComplete:()=>pd.style.visibility='hidden'});
+const closeP=()=>{if(deep){deep=false;history.replaceState(null,'',location.pathname+'#produk');hide()}else history.back()};
+$$('a.pc').forEach(a=>a.onclick=e=>{e.preventDefault();rect=a.getBoundingClientRect();history.pushState(null,'','#produk/'+a.dataset.id);show(a.dataset.id)});
+addEventListener('popstate',()=>{const m=location.hash.match(/^#produk\/(.+)/);if(m){rect=null;show(m[1])}else hide()});
+const dl=location.hash.match(/^#produk\/(.+)/);if(dl){deep=true;setTimeout(()=>show(dl[1]),2300)}
+$('#pdX').onclick=closeP;addEventListener('keydown',e=>{if(e.key==='Escape'){pd.style.visibility==='visible'?closeP():openM(false)}});
+const go=d=>{const k=(cur+d+P.length)%P.length;history.replaceState(null,'','#produk/'+P[k].id);fill(k);if(!calm)gsap.from('.pd-t>*,#pdI',{opacity:0,y:30,stagger:.05,duration:.6})};
+$('#pdPrev').onclick=()=>go(-1);$('#pdNext').onclick=()=>go(1);
+$('#pdQ').onclick=()=>{$('#f').pesan.value='Halo, saya tertarik dengan produk '+P[cur].n+'. Mohon informasi harga dan ketersediaannya.';deep=false;history.replaceState(null,'','#kontak');hide();setTimeout(()=>$('#kontak').scrollIntoView({behavior:'smooth'}),450)};
+// form: Supabase + WhatsApp
+const sb=window.supabase&&window.SUPABASE_URL&&!SUPABASE_URL.includes('ISI_')?supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY):null;
+const save=async d=>sb?sb.from('inquiries').insert(d):{error:1};
+const fd=()=>{const d=Object.fromEntries(new FormData($('#f')));delete d.website;return d};
+$('#f').onsubmit=async e=>{e.preventDefault();if(e.target.website.value)return;const st=$('#st');st.textContent='Mengirim…';const {error}=await save(fd());
+ st.textContent=error?'Gagal mengirim. Coba lagi atau hubungi kami lewat telepon.':'Terima kasih, pesan Anda sudah kami terima.';if(!error)e.target.reset()};
+const wn=(window.WA_NUMBER||'').replace(/\D/g,'').replace(/^0/,'62');
+if(wn){const b=$('#wa');b.hidden=false;b.onclick=()=>{if(!$('#f').reportValidity())return;const d=fd();save(d);
+ window.open('https://wa.me/'+wn+'?text='+encodeURIComponent(`Halo, saya ${d.nama} (${d.perusahaan||'-'}), ${d.jenis}.\n${d.pesan||''}\nKontak: ${d.kontak}`),'_blank')}}
 </script>
 </body>
 </html>
