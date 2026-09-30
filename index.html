@@ -7,6 +7,25 @@
 <meta name="description" content="Pemasok penyedap rasa dan bumbu makanan: Vijimoto, Galaxy, M59, M56, M5000. Untuk rumah tangga, Horeka, UMKM kuliner, grosir dan distributor.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://www.jayaprimanussa.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jaya Prima Nussa">
+<meta property="og:title" content="Jaya Prima Nussa — Membangun Rasa Nusantara">
+<meta property="og:description" content="Pemasok penyedap rasa dan bumbu makanan: Vijimoto, Galaxy, M59, M56, M5000. Untuk rumah tangga, Horeka, UMKM kuliner, grosir dan distributor.">
+<meta property="og:image" content="https://www.jayaprimanussa.com/assets/lineup.webp">
+<meta property="og:locale" content="id_ID">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","@id":"https://www.jayaprimanussa.com/#org","name":"Jaya Prima Nussa","url":"https://www.jayaprimanussa.com/","logo":"https://www.jayaprimanussa.com/assets/logo.webp","address":{"@type":"PostalAddress","streetAddress":"Jl. Kemayoran Baru 47","addressLocality":"Surabaya","addressCountry":"ID"},"telephone":"+62-31-3523801","email":"jayausahasby@gmail.com"},
+{"@type":"ItemList","name":"Kabar & Wawasan Jaya Prima Nussa","itemListElement":[
+{"@type":"ListItem","position":1,"url":"https://www.jayaprimanussa.com/#berita/mutu-pabrik"},
+{"@type":"ListItem","position":2,"url":"https://www.jayaprimanussa.com/#berita/30-inovasi"},
+{"@type":"ListItem","position":3,"url":"https://www.jayaprimanussa.com/#berita/dua-pasar"},
+{"@type":"ListItem","position":4,"url":"https://www.jayaprimanussa.com/#berita/jaringan-nasional"}
+]}
+]}
+</script>
 <style>
 :root{--red:#D9251C;--orange:#FF7A1A;--cream:#FFF4E6;--ink:#2B0D09;--wine:#5A130D;--f1:'Fraunces',Georgia,serif;--f2:'Manrope',system-ui,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
@@ -98,6 +117,41 @@ header img{height:46px;background:#fff;border-radius:10px;padding:5px}
 #inov .n{font:300 italic clamp(8rem,22vw,18rem)/.85 var(--f1);color:var(--red)}
 #inov .im{border-radius:24px;overflow:hidden;aspect-ratio:3/4}#inov .im img{width:100%;height:100%;object-fit:cover}
 /* kontak */
+
+/* berita */
+#berita .hd{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.w-nav{display:flex;gap:.6rem}.w-nav button{width:3rem;height:3rem;border-radius:50%;border:1.5px solid var(--ink);background:none;color:var(--ink);font:1.1rem var(--f2);cursor:pointer;transition:.3s}.w-nav button:hover{background:var(--ink);color:var(--cream)}
+.w-track{display:flex;gap:1.6rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.5rem;margin:0 -1.2rem;padding-left:1.2rem;padding-right:1.2rem}
+.w-track::-webkit-scrollbar{display:none}
+.wc{scroll-snap-align:start;flex:none;width:min(82vw,380px);cursor:pointer;display:block}
+.wc-im{aspect-ratio:4/5;border-radius:22px;overflow:hidden;position:relative;background:var(--wine)}
+.wc-im img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.8,.2,1)}.wc:hover .wc-im img{transform:scale(1.08)}
+.wc-tag{position:absolute;top:1rem;left:1rem;background:var(--red);color:#fff;font:700 .75rem var(--f2);padding:.3rem .9rem;border-radius:99px;z-index:2}
+.wc-b{padding-top:1.1rem}.wc-b time{font-size:.8rem;opacity:.6}.wc-b h3{font-size:1.5rem;margin-top:.3rem}.wc-b p{font-size:.92rem;margin-top:.4rem;opacity:.85}
+#nw{position:fixed;inset:0;z-index:70;background:var(--cream);overflow-y:auto;overscroll-behavior:contain;visibility:hidden}
+.nw-hero{position:relative;height:52svh;min-height:340px;background:var(--wine)}
+.nw-hero img{width:100%;height:100%;object-fit:cover;opacity:.75}
+.nw-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,13,9,.35),var(--cream) 96%)}
+.nw-hd{position:absolute;left:clamp(1.2rem,6vw,6rem);right:4rem;bottom:2.2rem;z-index:2;color:#fff}
+.nw-hd .wc-tag{position:static;display:inline-block;margin-bottom:.8rem}
+.nw-hd h2{font-size:clamp(2.4rem,5.5vw,4.6rem)}.nw-hd time{opacity:.85;display:block;margin-top:.6rem;font-size:.9rem}
+.nw-b{max-width:66ch;margin:0 auto;padding:3rem clamp(1.2rem,6vw,3rem) 5rem}.nw-b p{margin-bottom:1.3rem;font-size:1.08rem}
+.nw-nav{display:flex;justify-content:space-between;gap:1rem;margin-top:2rem;flex-wrap:wrap}
+
+
+/* game */
+#game{background:var(--wine);color:var(--cream);overflow:hidden}
+.game-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:2.5rem;align-items:center;margin-top:2.5rem}
+.game-card{position:relative;display:block;border-radius:26px;overflow:hidden;aspect-ratio:4/5;background:linear-gradient(160deg,#0E5A6B,#123);box-shadow:0 30px 70px rgba(0,0,0,.4)}
+.game-card img{width:100%;height:100%;object-fit:cover;opacity:.9}
+.game-card .gp{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:1.6rem;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.75))}
+.game-card b{font:300 italic 1.9rem var(--f1);color:#fff}
+.game-tag{display:inline-block;background:var(--orange);color:var(--ink);font:700 .75rem var(--f2);padding:.25rem 1rem;border-radius:99px;margin-bottom:.8rem;width:max-content}
+.game-feat{list-style:none;margin-top:1.6rem;display:grid;gap:.9rem;padding:0}
+.game-feat li{display:flex;gap:.7rem;align-items:flex-start;font-size:.98rem}
+.game-feat li b{color:var(--orange)}
+@media(max-width:800px){.game-wrap{grid-template-columns:1fr}}
+
 #kontak{background:var(--red);color:var(--cream)}
 #kontak .g{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem);margin-top:3rem}
 form{display:grid;gap:1rem}
@@ -114,7 +168,7 @@ footer{background:var(--ink);color:var(--cream);padding:2rem clamp(1.2rem,6vw,6r
 <body>
 <div id="load"><b>0%</b></div>
 <header><a href="#hero" aria-label="Beranda"><img src="assets/logo.webp" alt="Logo Jaya Prima Nussa"></a><button id="mb" aria-expanded="false">Menu</button></header>
-<nav id="menu" aria-label="Menu utama"><button id="mx">Tutup</button><div class="mn-l"><ul><li><a href="#tentang"><b>Tentang Kami</b><small>Profil perusahaan</small></a></li><li><a href="#produk"><b>Produk</b><small>Vijimoto, Galaxy, M59, dan lainnya</small></a></li><li><a href="#siapa"><b>Untuk Siapa</b><small>Rumah tangga, Horeka, UMKM, distributor</small></a></li><li><a href="#nilai"><b>Visi & Nilai</b><small>Arah dan prinsip kerja kami</small></a></li><li><a href="#dist"><b>Distribusi</b><small>Dari Sumatra sampai Nusa Tenggara</small></a></li><li><a href="#inov"><b>Inovasi</b><small>30 produk baru segera hadir</small></a></li><li><a href="#kontak"><b>Kontak</b><small>Ajukan kemitraan</small></a></li></ul><div class="mn-f">Jl. Kemayoran Baru 47, Surabaya<br>(031) 3523801, jayausahasby@gmail.com</div></div><div class="mn-r"><img class=on src="assets/factory2.webp" alt=""><img src="assets/lineup.webp" alt=""><img src="assets/shop2.webp" alt=""><img src="assets/hero-bowls.webp" alt=""><img src="assets/market.webp" alt=""><img src="assets/innovation.webp" alt=""><img src="assets/group.webp" alt=""></div></nav>
+<nav id="menu" aria-label="Menu utama"><button id="mx">Tutup</button><div class="mn-l"><ul><li><a href="#tentang"><b>Tentang Kami</b><small>Profil perusahaan</small></a></li><li><a href="#produk"><b>Produk</b><small>Vijimoto, Galaxy, M59, dan lainnya</small></a></li><li><a href="#siapa"><b>Untuk Siapa</b><small>Rumah tangga, Horeka, UMKM, distributor</small></a></li><li><a href="#nilai"><b>Visi & Nilai</b><small>Arah dan prinsip kerja kami</small></a></li><li><a href="#dist"><b>Distribusi</b><small>Dari Sumatra sampai Nusa Tenggara</small></a></li><li><a href="#inov"><b>Inovasi</b><small>30 produk baru segera hadir</small></a></li><li><a href="#game"><b>Main Yuk!</b><small>Mini game Bakso Juragan</small></a></li><li><a href="#berita"><b>Kabar &amp; Wawasan</b><small>Cerita di balik produk dan distribusi kami</small></a></li><li><a href="#kontak"><b>Kontak</b><small>Ajukan kemitraan</small></a></li></ul><div class="mn-f">Jl. Kemayoran Baru 47, Surabaya<br>(031) 3523801, jayausahasby@gmail.com</div></div><div class="mn-r"><img class=on src="assets/factory2.webp" alt=""><img src="assets/lineup.webp" alt=""><img src="assets/shop2.webp" alt=""><img src="assets/hero-bowls.webp" alt=""><img src="assets/market.webp" alt=""><img src="assets/innovation.webp" alt=""><img src="assets/group.webp" alt=""><img src="assets/shop1.webp" alt=""></div></nav>
 
 <section id="hero">
 <div class="sl"><img src="assets/hero-bowls.webp" alt="Aneka masakan Nusantara"></div>
@@ -167,6 +221,36 @@ footer{background:var(--ink);color:var(--cream);padding:2rem clamp(1.2rem,6vw,6r
 <p style="margin-top:1.5rem;max-width:52ch">Melalui riset dan pengembangan (R&amp;D) yang mendalam, higienis, dan terukur, kami menghadirkannya bertahap untuk melengkapi kebutuhan industri kuliner dan dapur Anda.</p></div>
 <div class="im"><img src="assets/innovation.webp" alt="Rempah dan bahan baku" loading="lazy"></div></section>
 
+<section id="game" class="wrap">
+<span class="game-tag">Fitur Game</span>
+<h2>Main Yuk!</h2>
+<div class="game-wrap">
+<div>
+<p style="max-width:52ch">Sambil kenalan sama produk kami, coba jadi juragan bakso sendiri lewat mini game <em>Bakso Juragan</em>. Racik pesanan, tabur micin secukupnya, dan kembangkan gerobak jadi Bakso Empire.</p>
+<ul class="game-feat">
+<li><b>Racik &amp; Layani</b> — susun bakso, mie atau bihun, sawi, dan kuah sesuai pesanan pelanggan sebelum sabar mereka habis.</li>
+<li><b>Tabur Micin Pas</b> — hentikan penunjuk di zona hijau untuk hasil sempurna dan kumpulkan combo.</li>
+<li><b>Upgrade Warung</b> — besarkan panci, percepat meja adonan, dan naikkan untung dengan Premix Tepung Bakso.</li>
+</ul>
+<a class="btn p" style="display:inline-block;margin-top:1.8rem;text-decoration:none" href="games/bakso-juragan.html">Mainkan Sekarang</a>
+</div>
+<a class="game-card" href="games/bakso-juragan.html" aria-label="Mainkan Bakso Juragan">
+<img src="assets/tepung.webp" alt="Cuplikan mini game Bakso Juragan" loading="lazy">
+<div class="gp"><b>Bakso Juragan</b><span style="opacity:.85;font-size:.9rem">Mini game masak &amp; jualan — gratis, langsung main di browser</span></div>
+</a>
+</div>
+</section>
+<section id="berita" class="wrap" aria-labelledby="w-h">
+<div class="hd"><h2 id="w-h">Kabar &amp; wawasan</h2><nav class="w-nav" aria-label="Navigasi kabar"><button id="wPrev" aria-label="Sebelumnya">←</button><button id="wNext" aria-label="Berikutnya">→</button></nav></div>
+<div class="w-track" id="wTrack">
+<article class="wc" data-id="mutu-pabrik"><div class="wc-im"><span class="wc-tag">Produksi &amp; Mutu</span><img src="assets/factory2.webp" alt="Proses produksi dan pergudangan Jaya Prima Nussa" loading="lazy"></div><div class="wc-b"><time datetime="2026-09-15">15 Sep 2026</time><h3>Menjaga mutu dari pabrik hingga meja makan</h3><p>Bagaimana proses produksi yang higienis dan terukur menjadi fondasi rasa yang konsisten di setiap kemasan.</p></div></article>
+<article class="wc" data-id="30-inovasi"><div class="wc-im"><span class="wc-tag">Inovasi</span><img src="assets/innovation.webp" alt="Bahan baku dan rempah untuk riset produk baru" loading="lazy"></div><div class="wc-b"><time datetime="2026-09-20">20 Sep 2026</time><h3>Menyongsong 30 inovasi produk baru</h3><p>Di balik layar riset dan pengembangan yang menyiapkan lini produk berikutnya untuk dapur Indonesia.</p></div></article>
+<article class="wc" data-id="dua-pasar"><div class="wc-im"><span class="wc-tag">Distribusi</span><img src="assets/shop1.webp" alt="Pedagang pasar menjual produk penyedap rasa" loading="lazy"></div><div class="wc-b"><time datetime="2026-09-24">24 Sep 2026</time><h3>Dari dapur rumah ke rak warung</h3><p>Menjangkau konsumen rumah tangga dan pelaku usaha kuliner sekaligus, tanpa mengorbankan kedekatan dengan keduanya.</p></div></article>
+<article class="wc" data-id="jaringan-nasional"><div class="wc-im"><span class="wc-tag">Jaringan</span><img src="assets/group.webp" alt="Lini produk Jaya Prima Nussa siap didistribusikan" loading="lazy"></div><div class="wc-b"><time datetime="2026-09-27">27 Sep 2026</time><h3>Memperluas jaringan hingga ke Nusa Tenggara</h3><p>Perjalanan distribusi dari pasar lokal Surabaya menuju jaringan yang menjangkau enam pulau utama.</p></div></article>
+</div></section>
+<div id="nw" role="dialog" aria-modal="true" aria-label="Detail kabar"><button id="nwX" class="btn" style="position:absolute;z-index:3;top:1.3rem;right:clamp(1.2rem,4vw,3rem);background:rgba(43,13,9,.55);border-color:var(--cream);color:#fff">Tutup</button>
+<div class="nw-hero"><img id="nwI" alt=""><div class="nw-hd"><span class="wc-tag" id="nwC"></span><h2 id="nwN"></h2><time id="nwD"></time></div></div>
+<div class="nw-b"><div id="nwP"></div><div class="nw-nav"><button class="btn" id="nwPrev">Sebelumnya</button><button class="btn p" id="nwNext">Berikutnya</button></div></div></div>
 <section id="kontak" class="wrap"><h2>Mari bermitra.</h2>
 <div class="g"><div><p>Jaya Prima Nussa<br>Jl. Kemayoran Baru 47, Surabaya, Indonesia</p><p style="margin-top:1rem">Telepon: <a href="tel:+62313523801">(031) 3523801</a><br>Email: <a href="mailto:jayausahasby@gmail.com">jayausahasby@gmail.com</a></p></div>
 <form id="f"><input name="nama" placeholder="Nama" required><input name="perusahaan" placeholder="Perusahaan / usaha"><input name="kontak" placeholder="Email atau WhatsApp" required>
@@ -241,10 +325,47 @@ const closeP=()=>{if(deep){deep=false;history.replaceState(null,'',location.path
 $$('a.pc').forEach(a=>a.onclick=e=>{e.preventDefault();rect=a.getBoundingClientRect();history.pushState(null,'','#produk/'+a.dataset.id);show(a.dataset.id)});
 addEventListener('popstate',()=>{const m=location.hash.match(/^#produk\/(.+)/);if(m){rect=null;show(m[1])}else hide()});
 const dl=location.hash.match(/^#produk\/(.+)/);if(dl){deep=true;setTimeout(()=>show(dl[1]),2300)}
-$('#pdX').onclick=closeP;addEventListener('keydown',e=>{if(e.key==='Escape'){pd.style.visibility==='visible'?closeP():openM(false)}});
+$('#pdX').onclick=closeP;addEventListener('keydown',e=>{if(e.key==='Escape'){if(nw.style.visibility==='visible')nwClose();else if(pd.style.visibility==='visible')closeP();else openM(false)}});
 const go=d=>{const k=(cur+d+P.length)%P.length;history.replaceState(null,'','#produk/'+P[k].id);fill(k);if(!calm)gsap.from('.pd-t>*,#pdI',{opacity:0,y:30,stagger:.05,duration:.6})};
 $('#pdPrev').onclick=()=>go(-1);$('#pdNext').onclick=()=>go(1);
 $('#pdQ').onclick=()=>{$('#f').pesan.value='Halo, saya tertarik dengan produk '+P[cur].n+'. Mohon informasi harga dan ketersediaannya.';deep=false;history.replaceState(null,'','#kontak');hide();setTimeout(()=>$('#kontak').scrollIntoView({behavior:'smooth'}),450)};
+// kabar & wawasan
+const N=[
+{id:'mutu-pabrik',c:'Produksi & Mutu',n:'Menjaga mutu dari pabrik hingga meja makan',d:'2026-09-15',dl:'15 September 2026',im:'factory2',p:[
+'Sebelum sebuah kemasan penyedap rasa sampai ke dapur pelanggan, ia melewati rangkaian proses yang dijaga ketat: penerimaan bahan baku, pengolahan, pengemasan, hingga penyimpanan di gudang yang tertata rapi.',
+'Bagi Jaya Prima Nussa, konsistensi rasa bukan kebetulan. Setiap tahap produksi mengikuti standar higienitas yang sama, sehingga rasa gurih dan kualitas yang dirasakan pelanggan hari ini akan tetap sama pada kemasan berikutnya.',
+'Pendekatan ini pula yang menjadi dasar bagi lini Vijimoto, Galaxy, hingga M59 untuk terus dipercaya oleh rumah tangga maupun pelaku usaha kuliner, dari dapur rumahan sampai dapur komersial yang bergerak setiap hari.',
+'Ke depan, investasi pada proses produksi ini akan terus berjalan beriringan dengan rencana perluasan lini produk, agar standar yang sama juga berlaku pada setiap inovasi baru yang diluncurkan.']},
+{id:'30-inovasi',c:'Inovasi',n:'Menyongsong 30 inovasi produk baru',d:'2026-09-20',dl:'20 September 2026',im:'innovation',p:[
+'Di balik rak-rak yang sudah dikenal seperti Vijimoto dan Galaxy, tim riset dan pengembangan (R&D) Jaya Prima Nussa tengah menyiapkan sesuatu yang lebih besar: 30 produk baru yang akan hadir secara bertahap.',
+'Proses ini tidak dikerjakan tergesa. Setiap formula diuji untuk memastikan keamanan pangan, kepraktisan penggunaan, dan kesesuaian dengan kebiasaan memasak masyarakat Indonesia, mulai dari bumbu tabur hingga premix siap pakai seperti Tepung Bakso Komplit.',
+'Filosofinya sederhana: inovasi harus menjawab kebutuhan nyata di dapur, bukan sekadar menambah jumlah produk di rak. Karena itu, arah pengembangan produk baru banyak lahir dari masukan mitra dagang dan kebiasaan konsumen sehari-hari.',
+'Peluncuran akan dilakukan bertahap agar setiap produk baru benar-benar siap, baik dari sisi mutu maupun ketersediaan pasokan di jaringan distribusi yang sudah ada.']},
+{id:'dua-pasar',c:'Distribusi',n:'Dari dapur rumah ke rak warung',d:'2026-09-24',dl:'24 September 2026',im:'shop1',p:[
+'Dua jenis pelanggan yang sangat berbeda kebutuhannya sama-sama menjadi perhatian Jaya Prima Nussa: keluarga yang memasak untuk kebutuhan harian, dan pelaku usaha yang mengandalkan bumbu untuk menjaga rasa dagangannya tetap konsisten.',
+'Untuk segmen rumah tangga (B2C), kepraktisan menjadi kunci: kemasan yang mudah ditemukan di toko dan warung dekat rumah, dengan rasa yang bisa diandalkan setiap hari.',
+'Sementara untuk pelaku usaha dan mitra dagang (B2B), mulai dari warung makan, katering, UMKM kuliner, hingga grosir dan distributor, kebutuhannya adalah pasokan yang stabil dan harga yang bersaing di setiap jenjang rantai perdagangan.',
+'Melayani keduanya sekaligus bukan tanpa tantangan, namun justru di situlah letak kekuatan jaringan distribusi yang dibangun: dekat dengan konsumen akhir, sekaligus dipercaya oleh mitra usaha di sepanjang jalur distribusi.']},
+{id:'jaringan-nasional',c:'Jaringan',n:'Memperluas jaringan hingga ke Nusa Tenggara',d:'2026-09-27',dl:'27 September 2026',im:'group',p:[
+'Berawal dari Surabaya, jaringan distribusi Jaya Prima Nussa kini menjangkau enam pulau utama Indonesia: Sumatra, Jawa, Kalimantan, Sulawesi, Bali, dan Nusa Tenggara.',
+'Perluasan ini berjalan selangkah demi selangkah, mengikuti kepercayaan yang dibangun bersama mitra toko, grosir, dan distributor di setiap daerah. Bukan sekadar mengirim barang, melainkan menjaga agar pasokan selalu tersedia saat dibutuhkan.',
+'Jaringan yang luas ini pula yang memungkinkan produk seperti Vijimoto dan Galaxy hadir baik di toko kelontong tradisional maupun ritel modern, menjangkau konsumen di berbagai lapisan pasar.',
+'Ke depan, penguatan jaringan ini akan terus berjalan seiring bertambahnya lini produk baru, agar jangkauan distribusi tumbuh sejalan dengan variasi produk yang ditawarkan.']}];
+const nw=$('#nw');let nwRect=null,nwDeep=false,nwCur=0;
+function nwFill(k){const a=N[k];nwCur=k;$('#nwI').src='assets/'+a.im+'.webp';$('#nwI').alt=a.n;$('#nwC').textContent=a.c;$('#nwN').textContent=a.n;$('#nwD').textContent=a.dl;$('#nwD').setAttribute('datetime',a.d);$('#nwP').innerHTML=a.p.map(t=>`<p>${t}</p>`).join('');nw.scrollTop=0}
+function nwShow(id){const k=N.findIndex(a=>a.id===id);if(k<0)return;nwFill(k);nw.style.visibility='visible';const r=nwRect;
+ gsap.fromTo(nw,{clipPath:r?`inset(${r.top}px ${innerWidth-r.right}px ${innerHeight-r.bottom}px ${r.left}px round 22px)`:`inset(${innerHeight}px 0px 0px 0px round 0px)`},{clipPath:'inset(0px 0px 0px 0px round 0px)',duration:calm?.01:.9,ease:'expo.inOut'});
+ if(!calm)gsap.from('.nw-hd>*,.nw-b>*',{y:30,opacity:0,stagger:.06,duration:.8,delay:.3,ease:'expo.out'});
+ $('#nwX').focus({preventScroll:true})}
+const nwHide=()=>gsap.to(nw,{clipPath:`inset(0px 0px ${innerHeight}px 0px round 0px)`,duration:calm?.01:.7,ease:'expo.inOut',onComplete:()=>nw.style.visibility='hidden'});
+const nwClose=()=>{if(nwDeep){nwDeep=false;history.replaceState(null,'',location.pathname+'#berita');nwHide()}else history.back()};
+$$('.wc').forEach(a=>a.onclick=()=>{nwRect=a.querySelector('.wc-im').getBoundingClientRect();history.pushState(null,'','#berita/'+a.dataset.id);nwShow(a.dataset.id)});
+addEventListener('popstate',()=>{const m=location.hash.match(/^#berita\/(.+)/);if(m){nwRect=null;nwShow(m[1])}else if(nw.style.visibility==='visible')nwHide()});
+const ndl=location.hash.match(/^#berita\/(.+)/);if(ndl){nwDeep=true;setTimeout(()=>nwShow(ndl[1]),2300)}
+$('#nwX').onclick=nwClose;$('#nwPrev').onclick=()=>{const k=(nwCur-1+N.length)%N.length;history.replaceState(null,'','#berita/'+N[k].id);nwFill(k)};
+$('#nwNext').onclick=()=>{const k=(nwCur+1)%N.length;history.replaceState(null,'','#berita/'+N[k].id);nwFill(k)};
+const wT=$('#wTrack');$('#wPrev').onclick=()=>wT.scrollBy({left:-380,behavior:'smooth'});$('#wNext').onclick=()=>wT.scrollBy({left:380,behavior:'smooth'});
+if(!calm)gsap.from('.wc',{y:50,opacity:0,stagger:.12,duration:.9,ease:'expo.out',scrollTrigger:{trigger:'#berita',start:'top 80%'}});
 // form: Supabase + WhatsApp
 const sb=window.supabase&&window.SUPABASE_URL&&!SUPABASE_URL.includes('ISI_')?supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY):null;
 const save=async d=>sb?sb.from('inquiries').insert(d):{error:1};
